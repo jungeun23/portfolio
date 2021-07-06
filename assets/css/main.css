@@ -3410,13 +3410,8 @@ input, select, textarea {
 		position: absolute;
 		bottom: 0px;
 		right: 0;
-		/* border: 1px solid red; */
 		width: 600px;
 		height: auto;
-		/* background-image: url(../../images/back.jpg);
-		background-size: 600px auto;
-		background-repeat: no-repeat;
-		background-position:30px 340px ; */
 		opacity: 0;
 		transition: all 2s;
 	}
