@@ -50,6 +50,8 @@
 
 						<!-- Zero -->
 							<section id="zero">
+								<!-- <div id="back"></div> -->
+								<img src="images/back.jpg" id="back">
 								<div class="container">
 									<header class="major">
 										<h2 id="greet" style="margin-top: 100px; opacity: 0;">반갑습니다!</h2>
@@ -66,6 +68,8 @@
 								var g1 = document.getElementById('g1');
 								var g2 = document.getElementById('g2');
 								var g3 = document.getElementById('g3');
+								// var zero = document.getElementById('zero');
+								var back = document.getElementById('back');
 
 								setTimeout(function(){
 									greet.style.opacity =1;
@@ -78,6 +82,13 @@
 								},900)
 								setTimeout(function(){
 									g3.style.opacity = 1;
+								},1200)
+								setTimeout(function(){
+									// zero.style.backgroundImage = "url('images/back.jpg')";
+									// zero.style.backgroundRepeat = "no-repeat";
+									// zero.style.backgroundSize = "600px auto";
+									// zero.style.backgroundPosition = "550px 350px";
+									back.style.opacity = 1;
 								},1200)
 
 							</script>
@@ -148,7 +159,7 @@
 									<div id="explain">* 프로젝트들은 최근 개발한 순으로 정렬되어 있습니다</div>
 									<div id="project" class="features">
 										<article>
-											<a href="#" class="image" target="_blank"><img src="images/erd.png" alt="" /></a>
+											<a href="web/viewer.html?file=oracle.pdf" class="image" target="_blank"><img src="images/erd.png" alt="" /></a>
 											<div class="inner">	
 												<h4>교육센터 운영 프로그램</h4>
 												<div><b>데이터 베이스 설계 및 구축 프로젝트</b></div>

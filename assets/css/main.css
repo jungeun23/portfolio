@@ -3379,7 +3379,11 @@ input, select, textarea {
 	}
 
 	#greet {
+		position: relative;
+		left: 0;
+		top: 0;
 		transition: all 1s;
+		z-index: 4;
 	}
 	.gre {
 		font-size: 28px;
@@ -3390,8 +3394,30 @@ input, select, textarea {
 	}
 	#g1 {
 		margin-top: 100px;
+		position: relative;
 	}
 	/*line-height: 2.7em; 2.7em */
 	#g3 {
 		margin-bottom: 130px;
 	}
+	#four > div > p {
+		font-weight: bold;
+	}
+	#zero {
+		position: relative;
+	}
+	#back {
+		position: absolute;
+		bottom: 0px;
+		right: 0;
+		/* border: 1px solid red; */
+		width: 600px;
+		height: auto;
+		/* background-image: url(../../images/back.jpg);
+		background-size: 600px auto;
+		background-repeat: no-repeat;
+		background-position:30px 340px ; */
+		opacity: 0;
+		transition: all 2s;
+	}
+	
