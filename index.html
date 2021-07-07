@@ -11,9 +11,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-		
+		<script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+		<script src="./assets/js/jquery-3.6.0.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<!-- 합쳐지고 최소화된 최신 CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
 	</head>
-	<body class="is-preload" onload="init();">
+	<body class="is-preload">
 
 		<!-- Header -->
 			<section id="header">
@@ -127,23 +132,215 @@
 								<div class="container">
 									<h3>Things I Can Do</h3>
 									<div>교육 및 프로젝트에서 사용해 본 개발 언어와 사용 환경입니다.</div>
-									<h4>사용 가능 개발 언어</h4>
-									<ul class="feature-icons">
-										<li class="icon brands fa-java">Java</li>
+									<h4 id="skill">사용 가능 개발 언어</h4>
+									<!-- <ul class="feature-icons">
+										<li class="icon brands fa-java"><span>Java</span></li>
 										<li class="icon solid fa-database">Oracle</li>
 										<li class="icon brands fa-html5"></i>HTML5</li>
 										<li class="icon brands fa-css3">CSS</li>
 										<li class="icon solid fa-bolt">JavaScript</li>
 										<li class="icon solid fa-battery-three-quarters">Arduino</li>
-									</ul>
-									<h4>사용 환경</h4>
-									<ul class="feature-icons">
+									</ul> -->
+									<div class="language">
+										<div class="row">
+											<div class="box ">
+												<div id="java" class="icon brands fa-java lan" ></div>
+												<div>Java</div>
+												<div class="chart" data-score="75">
+													<div id="b1" class="bar odd"></div>
+													<!-- Change the value below -->
+													<span id="value1" class="score">75</span>
+												</div>
+											</div>
+											<div class="box ">
+												<div id="oracle" class="icon solid fa-database lan" ></div>
+												<div>Oracle</div>
+												<div class="chart" data-score="65">
+													<div id="b2" class="bar odd"></div>
+													<!-- Change the value below -->
+													<span id="value2" class="score">65</span>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="box ">
+												<div id="html" class="icon brands fa-html5 lan" ></div>
+												<div>HTML5</div>
+												<div class="chart" data-score="60">
+													<div id="b3" class="bar odd"></div>
+													<!-- Change the value below -->
+													<span id="value3" class="score">60</span>
+												</div>
+											</div>
+											<div class="box ">
+												<div id="css" class="icon brands fa-css3 lan" ></div>
+												<div>CSS</div>
+												<div class="chart" data-score="64">
+													<div id="b4" class="bar odd"></div>
+													<!-- Change the value below -->
+													<span id="value4" class="score">64</span>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="box ">
+												<div id="javascript" class="icon solid fa-bolt lan" ></div>
+												<div>JavaScript</div>
+												<div class="chart" data-score="62">
+													<div id="b5" class="bar odd"></div>
+													<!-- Change the value below -->
+													<span id="value5" class="score">62</span>
+												</div>
+											</div>
+											<div class="box">
+												<div id="arduino" class="icon solid fa-battery-three-quarters lan" ></div>
+												<div>Arduino</div>
+												<div class="chart" data-score="48">
+													<div id="b6" class="bar odd"></div>
+													<!-- Change the value below -->
+													<span id="value6" class="score">48</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<script>
+
+										function increase() {
+											// Change the variable to modify the speed of the number increasing from 0 to (ms)
+											let SPEED = 30;
+
+											let limit1 = $('#value1').text();
+											for(let i = 0; i <= parseInt(limit1); i++) {
+												setTimeout(function () {
+													$('#value1').text(i + "%") ; 
+												}, SPEED * i);
+											}
+
+											let limit2 = $('#value2').text();
+											for(let i = 0; i <= parseInt(limit2); i++) {
+												setTimeout(function () {
+													$('#value2').text(i + "%") ; 
+												}, 36 * i);
+											}
+
+											let limit3 = $('#value3').text();
+											for(let i = 0; i <= parseInt(limit3); i++) {
+												setTimeout(function () {
+													$('#value3').text(i + "%") ; 
+												}, 37 * i);
+											}
+
+											let limit4 = $('#value4').text();
+											for(let i = 0; i <= parseInt(limit4); i++) {
+												setTimeout(function () {
+													$('#value4').text(i + "%") ; 
+												}, 36 * i);
+											}
+											
+											let limit5 = $('#value5').text();
+											for(let i = 0; i <= parseInt(limit5); i++) {
+												setTimeout(function () {
+													$('#value5').text(i + "%") ; 
+												}, 37 * i);
+											}
+											
+											let limit6 = $('#value6').text();
+											for(let i = 0; i <= parseInt(limit6); i++) {
+												setTimeout(function () {
+													$('#value6').text(i + "%") ; 
+												}, 47 * i);
+											}
+										}
+
+										function moveProgressBar() {
+											// console.log("moveProgressBar");
+												// var getScore = ($('.chart').data('score'));
+												// console.log(getScore.length);
+												// var getPercent = ($('.chart').data('score') / 100);
+												// var getProgressWrapWidth = $('.chart').width();
+												// var progressTotal = getPercent * getProgressWrapWidth;
+												var animationLength = 2500;
+												
+												// on page load, animate percentage bar to data percentage length
+												// .stop() used to prevent animation queueing
+												
+												$('#b1').stop().animate({
+													width: parseInt($('#value1').text())+'%'
+												}, animationLength);
+												$('#b2').stop().animate({
+													width: parseInt($('#value2').text())+'%'
+												}, animationLength);
+												$('#b3').stop().animate({
+													width: parseInt($('#value3').text())+'%'
+												}, animationLength);
+												$('#b4').stop().animate({
+													width: parseInt($('#value4').text())+'%'
+												}, animationLength);
+												$('#b5').stop().animate({
+													width: parseInt($('#value5').text())+'%'
+												}, animationLength);
+												$('#b6').stop().animate({
+													width: parseInt($('#value6').text())+'%'
+												}, animationLength);
+										}
+
+
+										var isVisible = false;
+
+										$(window).on('scroll',function() {
+											if (checkVisible($('#two'))&&!isVisible) {
+												// alert('visi');
+												// console.log($('.score').value());
+												increase();
+												moveProgressBar()
+												isVisible=true;
+											}
+										});
+
+										function checkVisible( elm, eval ) {
+											eval = eval || "object visible";
+											var viewportHeight = $(window).height(), // Viewport Height
+												scrolltop = $(window).scrollTop(), // Scroll Top
+												y = $(two).offset().top,
+												elementHeight = $(two).height();   
+											
+											if (eval == "object visible") return ((y < (viewportHeight + scrolltop -200)) && (y > (scrolltop - elementHeight)));
+											if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+										}
+									</script>
+
+
+									<div style="clear: both;"></div>
+									<h4  id="tool" >사용 환경</h4>
+									<!-- <ul class="feature-icons">
 										<li class="icon solid fa-coffee">Eclipse</li>
 										<li class="icon solid fa-cubes">SQLDeveloper</li>
 										<li class="icon solid fa-code">VSCode</li>
 										<li class="icon brands fa-github">Github</li>
-									</ul>
-									
+									</ul> -->
+									<div class="language">
+										<div class="row">
+											<div class="box ">
+												<div class="icon solid fa-coffee lan"></div>
+												<div>Eclipse</div>
+											</div>
+											<div class="box ">
+												<div class="icon solid fa-cubes lan"></div>
+												<div>SQLDeveloper</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="box ">
+												<div  class="icon solid fa-code lan"></div>
+												<div>VSCode</div>
+											</div>
+											<div class="box ">
+												<div class="icon brands fa-github lan"></div>
+												<div>Github</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</section>
 
@@ -152,7 +349,8 @@
 								<div class="container">
 									<h3>Project</h3>
 									<div>국비 교육에서 진행한 프로젝트 및 학부 중 진행한 캡스톤 디자인 프로젝트입니다.</div> 
-									<div id="explain">* 프로젝트들은 최근 개발한 순으로 정렬되어 있습니다</div>
+									<div class="explain">* 프로젝트들은 최근 개발한 순으로 정렬되어 있습니다.</div>
+									<div class="explain">* 사진을 누르시면 PDF 뷰어로 이동합니다.</div>
 									<div id="project" class="features">
 										<article>
 											<a href="web/viewer.html?file=oracle.pdf" class="image" target="_blank"><img src="images/erd.png" alt="" /></a>
@@ -161,6 +359,9 @@
 												<div><b>데이터 베이스 설계 및 구축 프로젝트</b></div>
 												<div>사용 언어 및 환경 : Oracle, SQLDeveloper</div>
 												<div>사용 기술 : ERD 정규화, procedure, 함수, 트리거</div>
+												<!-- <a class="btn" href="web/oracle.pdf" download>PDF 다운로드</a> -->
+												<a href="web/oracle.pdf" class="button small fit" download=""><i class="fas fa-file-download"></i>  프로젝트 요약본 PDF</a>
+												
 											</div>
 										</article>
 										<article>
@@ -170,6 +371,9 @@
 												<div><b>파일 입출력 기반의 그룹웨어 자바 콘솔 프로젝트</b></div>
 												<div>사용 언어 및 환경 : JDK 1.8, Eclipse</div>
 												<div>사용 기술 : 파일 입출력, 검색 및 정렬 기능, CRUD </div>
+												<!-- <a class="btn" href="web/java.pdf" download>PDF 다운로드</a> -->
+												<!-- <a href="web/java.pdf" class="button small fit" download="">프로젝트 요약본 PDF 다운로드</a> -->
+												<a href="web/java.pdf" class="button small fit" download=""><i class="fas fa-file-download"></i>  프로젝트 요약본 PDF</a>
 											</div>
 										</article>
 										<article>
@@ -178,6 +382,9 @@
 												<h4>원형 기계식 주차 시스템</h4>
 												<div>사용 언어 및 환경 : Arduino</div>
 												<div>원형 기계식 주차 시스템의 순서도 알고리즘 구현과 아두이노를 이용한 축소 모델 제작 및 구동</div>
+												<!-- <a class="btn" href="web/ASAP.pdf" download>PDF 다운로드</a> -->
+												<!-- <a href="web/ASAP.pdf" class="button small fit" download="">프로젝트 요약본 PDF 다운로드</a> -->
+												<a href="web/ASAP.pdf" class="button small fit" download=""><i class="fas fa-file-download"></i>  프로젝트 요약본 PDF</a>
 											</div>
 										</article>
 									</div>
@@ -540,9 +747,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 								</div>
 							</section>
-						 -->
+						
 
-					</div>
+					</div> -->
 
 				<!-- Footer -->
 					<section id="footer">

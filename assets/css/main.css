@@ -3316,46 +3316,47 @@ input, select, textarea {
 	}
 
 
-	/* 수정 */
+	/* 직접 수정 */
 
-	#one img[src='images/about2.gif'] {
-		width: 200px;
-		height: 200px;
+	/* zero 첫 화면 배경 이미지 */
+	#zero {
+		position: relative;
 	}
-	#one > div div:first-child {
-		margin-bottom: 10px;
+	#back {
+		position: absolute;
+		bottom: 0px;
+		right: 0;
+		width: 600px;
+		height: auto;
+		opacity: 0;
+		transition: all 2s;
 	}
-
-	#project {
-		margin-top: 30px;
+	/* zero 첫 화면 인삿말 */
+	#greet {
+		position: relative;
+		left: 0;
+		top: 0;
+		transition: all 1s;
+		z-index: 4;
 	}
-
-
-
-	#three #explain {
-		margin-top: 3px;
-		font-size: 14px;
-	}
-
-	#two > div h3+div{
+	.gre {
+		font-size: 28px;
 		font-weight: bold;
-		margin-bottom: 20px;
+		margin-bottom: 1.7em;
+		opacity: 0;
+		transition: all 1s;
 	}
-	#three > div h3+div{
-		font-weight: bold;
+	#g1 {
+		margin-top: 80px;
+		position: relative;
 	}
-
-	#project article > div div:nth-child(3),#project article > div div:nth-child(4){
-		font-size: 17px;
-	}
-	#project article > div div:nth-child(3){
-		margin-top: 10px;
-	}
-
-	#project article:last-child >div  {
-		font-size: 17px;
+	/*line-height: 2.7em; 2.7em */
+	#g3 {
+		margin-bottom: 150px;
 	}
 
+
+	/* one 자기소개  */
 	#oneMent > div:first-child{
 		display: inline-block;
 		float: left;
@@ -3378,41 +3379,159 @@ input, select, textarea {
 		margin-bottom: 50px;
 	}
 
-	#greet {
-		position: relative;
-		left: 0;
-		top: 0;
-		transition: all 1s;
-		z-index: 4;
+	#one img[src='images/about2.gif'] {
+		width: 200px;
+		height: 200px;
 	}
-	.gre {
-		font-size: 28px;
+	#one > div div:first-child {
+		margin-bottom: 10px;
+	}
+
+	
+	/* two 스킬 */
+	#two > div h3+div{
 		font-weight: bold;
-		margin-bottom: 1.7em;
-		opacity: 0;
-		transition: all 1s;
+		margin-bottom: 30px;
 	}
-	#g1 {
-		margin-top: 100px;
+
+	.language {
+		/* border: 1px solid red; */
+		width: 780px;
+		margin-bottom: 30px;
+		margin-top: 15px;
+	}
+	.row {
+		/* border: 1px solid blue; */
+		width: 782px;
+		margin-left: 0px;
+		margin-bottom: 22px;
+		
+	}
+	
+	#tool {
+		margin-top: 60px;
+	}
+	.box {
+		display: flex;
+		align-items: center;
+		width: 390px;
+		padding: 0;
+		margin: 0;
 		position: relative;
+		height: 50px;
+		border: 0;
 	}
-	/*line-height: 2.7em; 2.7em */
-	#g3 {
-		margin-bottom: 130px;
+
+	.lan {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+		background-color: #F05945;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: 18px;
+		
 	}
+	.lan + div {
+		margin-left: 15px;
+	}
+	.lan + div + div {
+		position: absolute;
+		left: 158px;
+	}
+	.chart {
+		border: 2px solid #CCC;
+		background-color: (255,255,255,0.1);
+		justify-content: flex-start;
+		border-radius: 6px;
+		align-items: center;
+		position: relative;
+		padding: 0 5px;
+		display: flex;
+		height: 20px;
+		width: 180px;
+	}
+		.chart span {
+			/* You can modify the value below to change the distance between the percentage number and the bar */
+			margin-left: 5px;
+			color: #BBB;
+			font-weight: bolder;
+			font-size: 15px;
+		}
+	
+	.bar {
+		/* You can modify the total time used for the animation here */
+		animation: load 3s normal forwards;
+		/* 
+		Add a little spice by having a shadow below the bar.
+		Feel free to comment out this line below to have an even LITE version :D 
+		*/
+		box-shadow: 0 10px 40px -10px #fff;
+	
+		border-radius: 3px;
+		background: #5EAAA8;
+		height: 10px;
+		width:20%;
+	} 
+	
+
+	/* @keyframes load {
+		0% {
+			width: 0;
+		}
+		100% {
+			/* You need to change the percentage below to match the value in the corresponding <span> */
+			/*width: 82%;
+		}
+	} */
+
+	/* three 프로젝트 */
+	#project {
+		margin-top: 30px;
+	}
+
+	#three > div > div:nth-child(3){
+		margin-top: 10px;
+		/* border: 1px solid red; */
+	}
+	#three .explain {
+		/* margin-top: 2px; */
+		font-size: 14px;
+		line-height: 1.8em;
+	}
+
+	#project > article > div > a {
+		margin-top: 10px;
+		/* border: 1px solid red; */
+		width: 170px;
+		font-size: 13px;
+		background-color: #AAA;
+		height: 34px;
+	}
+	#project > article > div > a > i {
+		margin-right: 3px;
+	}
+
+	#three > div h3+div{
+		font-weight: bold;
+	}
+
+	#project article > div div:nth-child(3),#project article > div div:nth-child(4){
+		font-size: 17px;
+	}
+	#project article > div div:nth-child(3){
+		margin-top: 10px;
+	}
+
+	#project article:last-child >div  {
+		font-size: 17px;
+	}
+
+
+	/* four 컨택  */
+	
 	#four > div > p {
 		font-weight: bold;
 	}
-	#zero {
-		position: relative;
-	}
-	#back {
-		position: absolute;
-		bottom: 0px;
-		right: 0;
-		width: 600px;
-		height: auto;
-		opacity: 0;
-		transition: all 2s;
-	}
-	
